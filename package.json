@@ -1,5 +1,5 @@
 {
-  "name": "lodashy",
+  "name": "@talkohavy/lodash",
   "version": "1.0.0",
   "description": "A bunch of lodash-like methods",
   "main": "index.js",
