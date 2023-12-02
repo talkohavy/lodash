@@ -8,9 +8,8 @@
     "test": "node --test"
   },
   "sideEffects": false,
-  "contributors": [
-    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
-  ],
+  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
