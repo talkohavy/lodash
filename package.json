@@ -30,7 +30,7 @@
     "./wrapInThrottle": "./lib/wrapInThrottle.js"
   },
   "author": "Tal Kohavy",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^8.54.0",
     "eslint-import-resolver-typescript": "^3.6.1",
