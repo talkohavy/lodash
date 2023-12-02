@@ -70,5 +70,5 @@ console.log(isObject(obj));
 
 [MIT](LICENSE)
 
-[npm-url]: https://npmjs.org/package/express
+[npm-url]: https://npmjs.com/package/@talkohavy/lodash
 [npm-version-image]: https://badge.fury.io/js/@talkohavy%2Flodash.svg
