@@ -2,16 +2,19 @@
   "name": "@talkohavy/lodash",
   "version": "1.0.9",
   "description": "A bunch of lodash-like methods",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
+    "build": "tsup index.ts --format cjs,esm --dts",
+    "lint": "tsc",
     "test": "node --test"
   },
   "sideEffects": false,
   "contributors": [
     "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
   ],
-  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
@@ -20,31 +23,19 @@
     ".": {
       "import": "./index.js",
       "require": "./index.cjs"
-    },
-    "./addItemToList": "./lib/addItemToList.js",
-    "./areObjectsEqual": "./lib/areObjectsEqual.js",
-    "./decodeBase64": "./lib/decodeBase64.js",
-    "./deepMerge": "./lib/deepMerge.js",
-    "./encodeBase64": "./lib/encodeBase64.js",
-    "./getArrMaxValue": "./lib/getArrMaxValue.js",
-    "./isNullish": "./lib/isNullish.js",
-    "./isObject": "./lib/isObject.js",
-    "./isObjEmpty": "./lib/isObjEmpty.js",
-    "./removeItemFromList": "./lib/removeItemFromList.js",
-    "./removeItemFromListByIndex": "./lib/removeItemFromListByIndex.js",
-    "./replaceItemOnListWith": "./lib/replaceItemOnListWith.js",
-    "./times": "./lib/times.js",
-    "./wrapInDebounce": "./lib/wrapInDebounce.js",
-    "./wrapInThrottle": "./lib/wrapInThrottle.js"
+    }
   },
   "author": "Tal Kohavy",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "eslint": "^8.54.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-sort-exports": "^0.8.0",
-    "prettier": "^3.1.0"
+    "prettier": "^3.1.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
   }
 }
