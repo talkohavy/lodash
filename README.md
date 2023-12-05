@@ -29,19 +29,19 @@ This package exposes the following functions:
 Using npm:
 
 ```bash
-npm install express
+npm install @talkohavy/lodash
 ```
 
 Using pnpm:
 
 ```bash
-pnpm add express
+pnpm add @talkohavy/lodash
 ```
 
 Using yarn:
 
 ```bash
-yarn add express
+yarn add @talkohavy/lodash
 ```
 
 ## How to use
