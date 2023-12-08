@@ -3,31 +3,120 @@ import { describe, it } from 'node:test';
 import { isNullish } from '../lib/isNullish.js';
 
 describe('isNullish', () => {
-  it('all the nullish cases should return true', () => {
-    const value1 = undefined;
-    const value2 = null;
+  it('null should return true', () => {
+    const value = null;
 
-    assert.strictEqual(isNullish(value1), true);
-    assert.strictEqual(isNullish(value2), true);
+    const actual = isNullish(value);
+    const expected = true;
+
+    assert.strictEqual(actual, expected);
   });
 
-  it('all the none cases should return false', () => {
-    const value1 = 123;
-    const value2 = 'hello';
-    const value3 = {};
-    const value4 = [];
-    const value5 = () => {};
-    const value6 = 0;
-    const value7 = '';
-    const value8 = NaN;
+  it('undefined should return true', () => {
+    const value = undefined;
 
-    assert.strictEqual(isNullish(value1), false);
-    assert.strictEqual(isNullish(value2), false);
-    assert.strictEqual(isNullish(value3), false);
-    assert.strictEqual(isNullish(value4), false);
-    assert.strictEqual(isNullish(value5), false);
-    assert.strictEqual(isNullish(value6), false);
-    assert.strictEqual(isNullish(value7), false);
-    assert.strictEqual(isNullish(value8), false);
+    const actual = isNullish(value);
+    const expected = true;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('number type should return false', () => {
+    const value = 123;
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('string type should return false', () => {
+    const value = 'some-word';
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('boolean type should return false', () => {
+    const value = true;
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('object type should return false', () => {
+    const value = { foo: 'bar' };
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('array type should return false', () => {
+    const value = ['foo', 'bar'];
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('function type should return false', () => {
+    const value = () => {};
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('edge case - number 0 should return false', () => {
+    const value = 0;
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('edge case - empty string should return false', () => {
+    const value = '';
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('edge case - empty object should return false', () => {
+    const value = {};
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('edge case - empty array should return false', () => {
+    const value = [];
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
+  });
+
+  it('edge case - NaN should return false', () => {
+    const value = NaN;
+
+    const actual = isNullish(value);
+    const expected = false;
+
+    assert.strictEqual(actual, expected);
   });
 });
