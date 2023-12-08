@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A bunch of lodash-like methods",
   "main": "index.js",
   "module": "index.js",
@@ -16,7 +16,9 @@
     "postversion": "git push && git push --tags && cd dist && npm publish"
   },
   "sideEffects": false,
-  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
+  "contributors": [
+    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
