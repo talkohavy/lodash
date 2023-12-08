@@ -10,9 +10,9 @@
     "build": "tsup --config tsup.config.js",
     "lint": "eslint -c ./.eslintrc.json \"./lib/**/*.js\"",
     "test": "node --test",
-    "preversion": "npm test",
-    "version": "npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm publish"
+    "pr1eversion": "npm test",
+    "ve1rsion": "npm run build",
+    "po1stversion": "git push && git push --tags && cd dist && npm publish"
   },
   "sideEffects": false,
   "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
