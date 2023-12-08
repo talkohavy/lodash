@@ -3,28 +3,23 @@
   "version": "1.0.13",
   "description": "A bunch of lodash-like methods",
   "main": "index.js",
-  "module": "index.mjs",
+  "module": "index.js",
   "types": "index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsup index.ts --format cjs,esm --dts",
+    "build": "tsup --config tsup.config.js",
     "lint": "tsc",
+    "test": "node --test",
     "version-up": "pnpm changeset",
-    "test": "node --test"
+    "preversion": "npm test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp"
   },
   "sideEffects": false,
-  "contributors": [
-    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
-  ],
+  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
-  },
-  "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
-    }
   },
   "author": "Tal Kohavy",
   "license": "MIT",
