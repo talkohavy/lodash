@@ -10,7 +10,6 @@
     "build": "tsup --config tsup.config.js",
     "lint": "eslint -c ./.eslintrc.json \"./lib/**/*.js\"",
     "test": "node --test",
-    "version-up": "pnpm changeset",
     "preversion": "npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish"
