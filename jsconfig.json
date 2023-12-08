@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "Node", // Defaults to "classic". Possible values: "Node", "Node16", "NodeNext"
+    "target": "ESNext", // defaults to "ES3"
+    "module": "ESNext",
+    "importsNotUsedAsValues": "error",
+    "ignoreDeprecations": "5.0",
+    "isolatedModules": true, // <--- Setting the isolatedModules flag tells TypeScript to warn you if you write certain code that can't be correctly interpreted by a single-file transpilation process.
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true, // new
+    "lib": ["ES2022"],
+    "checkJs": true, // without it? this config file would not apply to js/jsx files.
+    "sourceMap": true, // defaults to `false`.
+    "noImplicitOverride": true, // If you use inheritance, and you provide an override function, you must specify that it is an override function.
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist"
+    // "paths": {}
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules", "**/node_modules/*", "<node_internals>/**", "bin/**"],
+  "include": ["**/*/*.ts", "**/*.d.ts", "**/*.js", "**/*.jsx", "**/*.cjs", "*.ts", "*.d.ts", "*.js", "*.jsx", "*.cjs"]
+}
