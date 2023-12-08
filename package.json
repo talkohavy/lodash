@@ -14,7 +14,8 @@
     "postversion": "npm run format && git add . && git amend",
     "pr1eversion": "npm test",
     "ve1rsion": "npm run build",
-    "po1stversion": "git push && git push --tags && cd dist && npm publish"
+    "po1stversion": "git push && git push --tags && cd dist && npm publish",
+    "prepare": "husky install"
   },
   "sideEffects": false,
   "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
@@ -36,6 +37,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-jsdoc": "^46.9.0",
     "eslint-plugin-sort-exports": "^0.8.0",
+    "husky": "^8.0.3",
     "prettier": "^3.1.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2"
