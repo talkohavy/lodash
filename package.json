@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "A bunch of lodash-like methods",
   "main": "index.js",
   "module": "index.js",
@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "preversion": "npm test",
     "version": "npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm publish",
+    "postversion": "git push && git push --tags && cd dist && npm run publish",
     "prepare": "husky install"
   },
   "sideEffects": false,
