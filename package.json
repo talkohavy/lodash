@@ -12,8 +12,8 @@
     "test": "node --test",
     "version-up": "pnpm changeset",
     "preversion": "npm test",
-    "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags && rm -rf build/temp"
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && cd dist && npm publish"
   },
   "sideEffects": false,
   "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
