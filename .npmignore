@@ -5,3 +5,5 @@ jsconfig.json
 .vscode/
 __test__/
 toolbox/
+.changeset/
+.github/
