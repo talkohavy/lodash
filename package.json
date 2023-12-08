@@ -13,13 +13,10 @@
     "format": "prettier --write .",
     "preversion": "npm test",
     "version": "npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm run publish",
     "prepare": "husky install"
   },
   "sideEffects": false,
-  "contributors": [
-    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
-  ],
+  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
