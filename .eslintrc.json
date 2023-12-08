@@ -175,54 +175,57 @@
     // #######################
     // Rule Set 5: jsdoc rules
     // #######################
-    "jsdoc/check-access": "warn", // Recommended
-    "jsdoc/check-alignment": "warn", // Recommended
-    "jsdoc/check-indentation": "warn",
-    "jsdoc/check-line-alignment": "warn",
-    "jsdoc/check-param-names": "warn", // Recommended
+    "jsdoc/check-access": "warn", // <--- Recommended. Enforces valid @access tags.
+    "jsdoc/check-alignment": "warn", // <--- Recommended. aligns the asterisks (*) of a JSDoc.
+    "jsdoc/check-indentation": "warn", // <--- Checks for invalid padding inside JSDoc blocks
+    "jsdoc/check-line-alignment": "warn", // <--- Disallow double space between: * & @, annotation & '{', '}' & param name, param name & param description.
+    "jsdoc/check-param-names": "warn", // <--- Recommended. Check the @param name against the param name used in the function's signature.
     "jsdoc/check-property-names": "warn", // Recommended
-    "jsdoc/check-syntax": "warn",
-    "jsdoc/check-tag-names": "warn", // Recommended
-    "jsdoc/check-types": "warn", // Recommended
-    "jsdoc/check-values": "warn", // Recommended
-    "jsdoc/empty-tags": "warn", // Recommended
+    "jsdoc/check-syntax": "warn", // <--- Disallow the Google style of how to declare an optional prop: `* @param {string=} foo`. Only allow for: `* @param {string} [foo]`
+    "jsdoc/check-tag-names": "warn", // <--- Recommended. Reports invalid jsdoc (block) tag names. i.e. report `@par1am` as error.
+    "jsdoc/check-types": "warn", // <--- Recommended. ensure that the casing of native types is as in this list: [undefined, null, boolean, number, bigint, string, symbol, object, Array, Function, Date, RegExp].
+    "jsdoc/check-values": "warn", // <--- Recommended. Checks for expected content within some miscellaneous tags (@version, @since, @license, @author).
+    "jsdoc/empty-tags": "warn", // <--- Recommended. Checks tags that are expected to be empty. i.e. @private, @readonly, @abstract, @async, etc.
     "jsdoc/implements-on-classes": "warn", // Recommended
-    "jsdoc/informative-docs": "warn",
-    "jsdoc/match-description": ["warn", { "matchDescription": "^\n?([*A-Z`\\d_][\\s\\S]*[.?!`]\\s*)?$" }],
-    "jsdoc/multiline-blocks": "warn", // Recommended
-    "jsdoc/no-bad-blocks": "warn",
+    "jsdoc/informative-docs": "warn", // <--- Reports on JSDoc texts that only repeats their attached name. i.e. `* @param {any} obj - The obj`.
+    "jsdoc/match-description": [
+      "warn",
+      { "matchDescription": "^\n?([*A-Z`\\d_][\\s\\S]*([.?!`]|\\*\\w+\\*{1,3})\\s*)?$" }
+    ],
+    "jsdoc/multiline-blocks": ["error", { "noSingleLineBlocks": true, "singleLineTags": ["*"] }], // Recommended. Ensure that a JSDoc should not have text on the "0th" line.
+    "jsdoc/no-bad-blocks": "warn", // <--- bad jsdoc looks like /* */, or even /*** */. good jsdoc looks like /** */, meaning with exactly 2 asterisks.
     "jsdoc/no-blank-block-descriptions": "warn",
-    "jsdoc/no-defaults": "warn",
-    "jsdoc/no-multi-asterisks": "warn", // Recommended
-    "jsdoc/require-asterisk-prefix": "warn",
-    "jsdoc/require-description-complete-sentence": ["warn", { "abbreviations": ["Mr."] }],
+    "jsdoc/no-defaults": "warn", // <--- This rule reports defaults being used on the relevant portion of @param or @default.
+    "jsdoc/no-multi-asterisks": ["warn", { "allowWhitespace": true }], // Recommended
+    "jsdoc/no-undefined-types": "warn", // <--- Recommended. Besides some expected built-in types, prohibits any types not specified as globals or within @typedef
+    "jsdoc/require-asterisk-prefix": "warn", // <--- all jsdoc lines must start with asterisks. as
     "jsdoc/require-hyphen-before-param-description": "warn",
+    "jsdoc/require-param": "warn", // <--- Recommended. Requires that all function parameters are documented with a @param tag.
     "jsdoc/require-param-name": "warn", // Recommended
     "jsdoc/require-param-type": "warn", // Recommended
     "jsdoc/require-property": "warn", // Recommended
     "jsdoc/require-property-name": "warn", // Recommended
     "jsdoc/require-property-type": "warn", // Recommended
+    "jsdoc/require-returns": "warn", // Recommended
     "jsdoc/require-returns-check": "warn", // Recommended
     "jsdoc/require-returns-type": "warn", // Recommended
     "jsdoc/require-throws": "warn",
     "jsdoc/require-yields": "warn", // Recommended
     "jsdoc/require-yields-check": "warn", // Recommended
-    "jsdoc/sort-tags": "warn",
-    "jsdoc/tag-lines": "warn", // Recommended
+    "jsdoc/sort-tags": "warn", // <--- sort @tags. This is not an alphabetic sorting.
+    "jsdoc/tag-lines": ["warn", "always", { "count": 0, "applyToEndTag": false }], // <--- Recommended. Disallow empty lines between two annotation tags. Note! A "count" of 1+ conflicts with the "jsdoc/sort-tags" rule.
     "jsdoc/valid-types": "warn" // Recommended
-    // "jsdoc/check-examples": "warn",
-    // "jsdoc/no-missing-syntax": "warn",
-    // "jsdoc/no-restricted-syntax": "warn",
-    // "jsdoc/no-types": "warn",
-    // "jsdoc/no-undefined-types": "warn", // Recommended
+    // "jsdoc/check-examples": "warn", // <--- This rule cannot yet be supported for ESLint 8; you should either downgrade to ESLint 7 or disable this rule.
+    // "jsdoc/no-missing-syntax": "warn" , // <--- this rule is a rather complex one, and does not add much value.
+    // "jsdoc/no-restricted-syntax": "error",
+    // "jsdoc/no-types": "warn", // <--- turns this: `@param {object} obj1` into this: `@param obj1`. Disallows types for params.
     // "jsdoc/require-description": "warn",
+    // "jsdoc/require-description-complete-sentence": ["warn", { "abbreviations": ["empty."] }],
     // "jsdoc/require-example": "warn",
     // "jsdoc/require-file-overview": "warn",
     // "jsdoc/require-jsdoc": "warn", // Recommended
-    // "jsdoc/require-param": "warn", // Recommended
-    // "jsdoc/require-param-description": "warn", // Recommended
-    // "jsdoc/require-property-description": "warn", // Recommended
-    // "jsdoc/require-returns": "warn", // Recommended
+    // "jsdoc/require-param-description": "warn", // Recommended. I left it off. Sometimes I just want to have a param named "props", without it having a description.
+    // "jsdoc/require-property-description": "warn", // Recommended. I left it off. Sometimes a property is self explanatory, and doesn't need a description.
     // "jsdoc/require-returns-description": "warn", // Recommended
 
     // #####################
