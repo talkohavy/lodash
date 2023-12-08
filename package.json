@@ -16,9 +16,7 @@
     "postversion": "git push && git push --tags && cd dist && npm publish"
   },
   "sideEffects": false,
-  "contributors": [
-    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
-  ],
+  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
