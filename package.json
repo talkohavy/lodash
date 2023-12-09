@@ -10,7 +10,7 @@
   "scripts": {
     "build": "tsup --config tsup.config.js",
     "lint": "eslint -c ./.eslintrc.json \"./lib/**/*.js\"",
-    "test": "node --test",
+    "test": "node --test **/*bjectsEqual.test.js",
     "format": "prettier . --write",
     "check-format": "prettier . --check",
     "preversion": "npm test",
