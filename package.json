@@ -19,7 +19,7 @@
     "prepare": "husky install"
   },
   "sideEffects": false,
-  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
+  "contributors": [{ "name": "Tal Kohavy", "email": "talkohavy@gmail.com", "url": "https://github.com/talkohavy" }],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
@@ -50,6 +50,10 @@
     "./times": "./times.js",
     "./wrapInDebounce": "./wrapInDebounce.js",
     "./wrapInThrottle": "./wrapInThrottle.js"
+  },
+  "bugs": {
+    "url": "https://github.com/talkohavy/filters/issues",
+    "email": "talkohavy@gmail.com"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.13.2",
