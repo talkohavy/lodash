@@ -58,7 +58,7 @@
     "./wrapInThrottle": "./wrapInThrottle.js"
   },
   "bugs": {
-    "url": "https://github.com/talkohavy/filters/issues",
+    "url": "https://github.com/talkohavy/lodash/issues",
     "email": "talkohavy@gmail.com"
   },
   "devDependencies": {
