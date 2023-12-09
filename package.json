@@ -30,6 +30,23 @@
     "registry": "https://registry.npmjs.org/",
     "access": "restricted"
   },
+  "exports": {
+    "./addItemToList": "./addItemToList.js",
+    "./areObjectsEqual": "./areObjectsEqual.js",
+    "./decodeBase64": "./decodeBase64.js",
+    "./deepMerge": "./deepMerge.js",
+    "./encodeBase64": "./encodeBase64.js",
+    "./getArrMaxValue": "./getArrMaxValue.js",
+    "./isNullish": "./isNullish.js",
+    "./isObject": "./isObject.js",
+    "./isEmpty": "./isEmpty.js",
+    "./removeItemFromList": "./removeItemFromList.js",
+    "./removeItemFromListByIndex": "./removeItemFromListByIndex.js",
+    "./replaceItemOnListWith": "./replaceItemOnListWith.js",
+    "./times": "./times.js",
+    "./wrapInDebounce": "./wrapInDebounce.js",
+    "./wrapInThrottle": "./wrapInThrottle.js"
+  },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.13.2",
     "eslint": "^8.54.0",
