@@ -33,7 +33,7 @@ export default defineConfig((_options) => ({
     packageJson.publishConfig.access = 'public';
 
     // Step 5: create new package.json file in dist
-    fs.writeFileSync('./dist/package.json', packageJson);
+    fs.writeFileSync('./dist/package.json', JSON.stringify(packageJson));
 
     console.log('DONE !!!');
     // return () => { cleanupFunction() }
