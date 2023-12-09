@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "description": "A bunch of lodash-like methods",
   "private": "true",
   "main": "dist/index.js",
@@ -19,7 +19,13 @@
     "prepare": "husky install"
   },
   "sideEffects": false,
-  "contributors": [{ "name": "Tal Kohavy", "email": "talkohavy@gmail.com", "url": "https://github.com/talkohavy" }],
+  "contributors": [
+    {
+      "name": "Tal Kohavy",
+      "email": "talkohavy@gmail.com",
+      "url": "https://github.com/talkohavy"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
