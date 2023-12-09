@@ -11,15 +11,13 @@
     "lint": "eslint -c ./.eslintrc.json \"./lib/**/*.js\"",
     "test": "node --test",
     "format": "prettier --write .",
-    "preversion": "npm test",
-    "version": "npm run build",
+    "preversion": "npm run format && npm test",
+    "version": "npm run format && npm run build",
     "postversion": "git push && git push --tags",
     "prepare": "husky install"
   },
   "sideEffects": false,
-  "contributors": [
-    "Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"
-  ],
+  "contributors": ["Tal Kohavy <talkohavy@gmail.com> (@Tal Kohavy)"],
   "repository": {
     "type": "git",
     "url": "https://github.com/talkohavy/lodash"
