@@ -31,6 +31,10 @@
     "access": "restricted"
   },
   "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
     "./addItemToList": "./addItemToList.js",
     "./areObjectsEqual": "./areObjectsEqual.js",
     "./decodeBase64": "./decodeBase64.js",
