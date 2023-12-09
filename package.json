@@ -2,9 +2,10 @@
   "name": "@talkohavy/lodash",
   "version": "1.0.40",
   "description": "A bunch of lodash-like methods",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "private": "true",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsup --config tsup.config.js",
@@ -27,7 +28,7 @@
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "access": "restricted"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^6.13.2",
