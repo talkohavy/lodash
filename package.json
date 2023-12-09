@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "preversion": "npm test",
     "version": "npm run format && npm run build",
-    "postversion": "git push && git push --tags",
+    "postversion": "git push && git push --tags && cd dist && npm publish",
     "prepare": "husky install"
   },
   "sideEffects": false,
