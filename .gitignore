@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 # I added these:
+.npmrc
