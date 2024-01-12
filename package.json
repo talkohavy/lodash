@@ -16,6 +16,7 @@
     "preversion": "npm test",
     "version": "npm run format && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
+    "typecheck": "tsc -p jsconfig.json",
     "prepare": "husky install"
   },
   "sideEffects": false,
@@ -36,27 +37,6 @@
     "registry": "https://registry.npmjs.org/",
     "access": "restricted"
   },
-  "exports": {
-    ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
-    },
-    "./addItemToList": "./addItemToList.js",
-    "./areObjectsEqual": "./areObjectsEqual.js",
-    "./decodeBase64": "./decodeBase64.js",
-    "./deepMerge": "./deepMerge.js",
-    "./encodeBase64": "./encodeBase64.js",
-    "./getArrMaxValue": "./getArrMaxValue.js",
-    "./isNullish": "./isNullish.js",
-    "./isObject": "./isObject.js",
-    "./isEmpty": "./isEmpty.js",
-    "./removeItemFromList": "./removeItemFromList.js",
-    "./removeItemFromListByIndex": "./removeItemFromListByIndex.js",
-    "./replaceItemOnListWith": "./replaceItemOnListWith.js",
-    "./times": "./times.js",
-    "./wrapInDebounce": "./wrapInDebounce.js",
-    "./wrapInThrottle": "./wrapInThrottle.js"
-  },
   "bugs": {
     "url": "https://github.com/talkohavy/lodash/issues",
     "email": "talkohavy@gmail.com"
@@ -66,6 +46,7 @@
     "eslint-plugin-ezlint": "^1.0.12",
     "husky": "^8.0.3",
     "prettier": "^3.1.0",
-    "tsup": "^8.0.1"
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
   }
 }
