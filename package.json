@@ -3,9 +3,9 @@
   "version": "1.0.46",
   "description": "A bunch of lodash-like methods",
   "private": "true",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
     "build": "tsup --config tsup.config.js",
@@ -16,7 +16,7 @@
     "preversion": "npm test",
     "version": "npm run format && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
-    "typecheck": "tsc -p jsconfig.json",
+    "typecheck": "tsc -p jsconfig.json && cp package.json dist/package.json",
     "prepare": "husky install"
   },
   "sideEffects": false,
@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/node": "^20.11.0",
     "eslint": "^8.54.0",
-    "eslint-plugin-ezlint": "^1.0.12",
+    "eslint-plugin-ezlint": "^1.0.25",
     "husky": "^8.0.3",
     "prettier": "^3.1.0",
     "tsup": "^8.0.1",
