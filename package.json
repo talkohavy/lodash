@@ -37,6 +37,27 @@
     "registry": "https://registry.npmjs.org/",
     "access": "restricted"
   },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.cjs"
+    },
+    "./addItemToList": "./lib/addItemToList.js",
+    "./areObjectsEqual": "./lib/areObjectsEqual.js",
+    "./decodeBase64": "./lib/decodeBase64.js",
+    "./deepMerge": "./lib/deepMerge.js",
+    "./encodeBase64": "./lib/encodeBase64.js",
+    "./getArrMaxValue": "./lib/getArrMaxValue.js",
+    "./isNullish": "./lib/isNullish.js",
+    "./isObject": "./lib/isObject.js",
+    "./isEmpty": "./lib/isEmpty.js",
+    "./removeItemFromList": "./lib/removeItemFromList.js",
+    "./removeItemFromListByIndex": "./lib/removeItemFromListByIndex.js",
+    "./replaceItemOnListWith": "./lib/replaceItemOnListWith.js",
+    "./times": "./lib/times.js",
+    "./wrapInDebounce": "./lib/wrapInDebounce.js",
+    "./wrapInThrottle": "./lib/wrapInThrottle.js"
+  },
   "bugs": {
     "url": "https://github.com/talkohavy/lodash/issues",
     "email": "talkohavy@gmail.com"
