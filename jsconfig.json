@@ -36,7 +36,7 @@
     // "declarationMap": true, // Create sourcemaps for d.ts files.
     // "emitDeclarationOnly": true, // Only output d.ts files and not JavaScript files.
     "sourceMap": false, // default value is false. Create source map files for emitted JavaScript files.
-    "outDir": "./dist", // Specify an output folder for all emitted files.
+    "outDir": "./dist/lib", // Specify an output folder for all emitted files.
     "noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
     "removeComments": true, // Disable emitting comments.
     "verbatimModuleSyntax": true,
