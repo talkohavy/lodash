@@ -14,7 +14,7 @@ export default defineConfig((_options) => ({
   clean: true, // <--- Should clean output directory before each build?
   treeshake: true, // <--- esbuild has tree shaking enabled by default, but sometimes it's not working very well, so tsup offers an additional option to let you use Rollup for tree shaking instead. This flag will enable Rollup for tree shaking.
   // dts: true, // <--- Generate declaration file, meaning a index.d.ts.
-  // target: , // <--- The value for target defaults to compilerOptions.target in your tsconfig.json, or node14 if unspecified. For more information check out esbuild's target option.
+  target: 'esnext', // <--- The value for target defaults to compilerOptions.target in your tsconfig.json, or node14 if unspecified. For more information check out esbuild's target option.
   // env: process.NODE_ENV,
   async onSuccess() {
     // Step 1: copy README file as-is to dist
