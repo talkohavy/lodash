@@ -13,8 +13,7 @@ pnpm-lock.yaml
 /certs
 
 # misc
-**/*/public
-**/*/dist
+**/dist
 **/.DS_Store
 **/.env.*
 **/.git
