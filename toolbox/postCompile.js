@@ -5,7 +5,9 @@ import { globSync } from 'glob';
 const outFolderName = 'dist';
 const sortAlphabetically = (a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase());
 
-async function postTypeCheck() {
+postCompile();
+
+async function postCompile() {
   deleteOriginalDtsFileIdExists();
 
   generateNewIndexDtsFile();
@@ -16,8 +18,6 @@ async function postTypeCheck() {
 
   console.log('DONE !!!');
 }
-
-postTypeCheck();
 
 function deleteOriginalDtsFileIdExists() {
   // Step 1: delete the index.d.ts file
