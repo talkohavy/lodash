@@ -19,7 +19,7 @@
     "version": "npm run format-fix && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
     "pretypecheck": "rm -rf dist",
-    "typecheck": "tsc -p jsconfig.json && cp package.json dist/package.json",
+    "typecheck": "tsc -p jsconfig.json",
     "posttypecheck": "node ./toolbox/postTypecheck",
     "prepare": "husky install"
   },
