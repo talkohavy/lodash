@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isNullish } from '../lib/isNullish.js';
+import { isNullish } from '../src/isNullish.js';
 
 describe('isNullish', () => {
   it('null should return true', () => {

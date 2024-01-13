@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { areObjectsEqual } from '../lib/areObjectsEqual.js';
+import { areObjectsEqual } from '../src/areObjectsEqual.js';
 
 describe('areObjectsEqual', () => {
   describe('same pointer', () => {

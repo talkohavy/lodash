@@ -8,15 +8,19 @@
   "types": "index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "tsup --config tsup.config.js",
-    "lint": "eslint -c ./.eslintrc.json \"./src/**/*.js\"",
+    "clean": "rm -rf node_modules",
+    "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore '**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore '**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "format": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
+    "format-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "test": "node --test",
-    "format": "prettier . --write",
-    "check-format": "prettier . --check",
+    "build": "pnpm run pretypecheck && pnpm run typecheck && pnpm run posttypecheck",
     "preversion": "npm test",
-    "version": "npm run format && npm run build",
+    "version": "npm run format-fix && npm run build",
     "postversion": "git push && git push --tags && cd dist && npm publish",
+    "pretypecheck": "rm -rf dist",
     "typecheck": "tsc -p jsconfig.json && cp package.json dist/package.json",
+    "posttypecheck": "node ./toolbox/postTypecheck",
     "prepare": "husky install"
   },
   "sideEffects": false,
@@ -39,8 +43,8 @@
   },
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.cjs"
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
     },
     "./addItemToList": "./lib/addItemToList.js",
     "./areObjectsEqual": "./lib/areObjectsEqual.js",
@@ -66,9 +70,9 @@
     "@types/node": "^20.11.0",
     "eslint": "^8.54.0",
     "eslint-plugin-ezlint": "^1.0.25",
+    "glob": "^10.3.10",
     "husky": "^8.0.3",
     "prettier": "^3.1.0",
-    "tsup": "^8.0.1",
     "typescript": "^5.3.3"
   }
 }

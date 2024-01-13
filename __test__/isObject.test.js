@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isObject } from '../lib/isObject.js';
+import { isObject } from '../src/isObject.js';
 
 describe('isObject', () => {
   it('object should return true', () => {

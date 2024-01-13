@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isEmpty } from '../lib/isEmpty.js';
+import { isEmpty } from '../src/isEmpty.js';
 
 describe('isEmpty', () => {
   it('empty object should return true', () => {
