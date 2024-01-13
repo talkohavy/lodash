@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "description": "A bunch of lodash-like methods",
   "private": "true",
   "main": "lib/index.js",
