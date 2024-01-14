@@ -5,9 +5,9 @@ import { globSync } from 'glob';
 const outFolderName = 'dist';
 const sortAlphabetically = (a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase());
 
-postCompile();
+postBuild();
 
-async function postCompile() {
+async function postBuild() {
   deleteOriginalDtsFileIdExists();
 
   generateNewIndexDtsFile();
