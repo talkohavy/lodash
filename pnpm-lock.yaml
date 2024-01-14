@@ -12,8 +12,8 @@ devDependencies:
     specifier: ^8.54.0
     version: 8.55.0
   eslint-plugin-ezlint:
-    specifier: ^1.0.25
-    version: 1.0.25(eslint@8.55.0)(typescript@5.3.3)
+    specifier: ^1.0.30
+    version: 1.0.30(eslint@8.55.0)(typescript@5.3.3)
   glob:
     specifier: ^10.3.10
     version: 10.3.10
@@ -722,8 +722,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-ezlint@1.0.25(eslint@8.55.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-d0u67r3LTak8z/aGhMwEBHaVgbqfEtl9ZVzVP3cAsp9yXX+6lSVvQvyBQzDih3FDeMxbZjGPua8i3PY+C0egKQ==}
+  /eslint-plugin-ezlint@1.0.30(eslint@8.55.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-CLLmwjg3qw6aRVOgPR19SGA9YhDRe1uS5e54y4nJmMR9xQiP38e0iRgitLzt8dnPVqRbdoroxH/TRoTlZGVJbQ==}
     engines: {node: ^14.17.0 || ^16.0.0 || >= 18.0.0}
     peerDependencies:
       eslint: '>=7'
