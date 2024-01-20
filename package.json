@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "A bunch of lodash-like methods",
   "private": "true",
   "main": "lib/index.js",
@@ -12,6 +12,7 @@
     "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
     "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
     "format": "biome format --verbose ./src",
+    "format-fix": "biome format --verbose ./src --write",
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "test": "node --test",
