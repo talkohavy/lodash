@@ -93,5 +93,16 @@ describe('areObjectsEqual', () => {
       assert.notDeepStrictEqual(obj1, obj2);
       assert.strictEqual(actual, expected);
     });
+
+    it('same key different value should say not equal', () => {
+      const obj1 = { name: { foo: { bar: '123' } } };
+      const obj2 = { name: 'John' };
+
+      const actual = areObjectsEqual(obj1, obj2);
+      const expected = false;
+
+      assert.notDeepStrictEqual(obj1, obj2);
+      assert.strictEqual(actual, expected);
+    });
   });
 });

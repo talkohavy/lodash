@@ -7,12 +7,20 @@ import { isObject } from './isObject.js';
  * @returns { boolean } Returns true or false.
  */
 function areObjectsEqual(obj1, obj2) {
-  return [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].every((key) => {
-    if (isObject(obj1[key])) {
-      const isSubKeyEqual = areObjectsEqual(obj1[key], obj2[key]);
-      if (!isSubKeyEqual) return false;
-    } else if (obj1[key] !== obj2[key]) return false;
-    return true;
+  const allKeysArr = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
+
+  return allKeysArr.every((key) => {
+    if (!(key in obj1 && key in obj2)) return false;
+
+    // @ts-ignore
+    const isObjNumericValue = isObject(obj1[key]) + isObject(obj2[key]);
+
+    if (isObjNumericValue === 0) return obj1[key] === obj2[key];
+
+    if (isObjNumericValue === 1) return false;
+
+    if (isObjNumericValue === 2) return areObjectsEqual(obj1[key], obj2[key]);
   });
 }
+
 export { areObjectsEqual };
