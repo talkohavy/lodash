@@ -11,8 +11,9 @@
     "clean": "rm -rf node_modules",
     "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
     "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
-    "format": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
-    "format-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
+    "format": "biome format --verbose ./src",
+    "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
+    "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "test": "node --test",
     "preversion": "npm test",
     "version": "npm run format-fix && npm run build",
@@ -67,6 +68,7 @@
     "email": "talkohavy@gmail.com"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.5.2",
     "@types/node": "^20.11.0",
     "eslint": "^8.54.0",
     "eslint-plugin-ezlint": "^1.0.35",
