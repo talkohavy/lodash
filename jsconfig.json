@@ -20,7 +20,7 @@
     "resolveJsonModule": true,
     "baseUrl": "./",
     "paths": {},
-    "typeRoots": ["node_modules/@types", "@luckylove-pkg/types"],
+    "typeRoots": ["node_modules/@types"],
 
     // -----------------------------
     // Section 4: JavaScript Support
