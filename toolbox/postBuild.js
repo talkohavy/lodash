@@ -8,18 +8,18 @@ const sortAlphabetically = (a, b) => a.name.toLowerCase().localeCompare(b.name.t
 postBuild();
 
 async function postBuild() {
-  deleteOriginalDtsFileIdExists();
+  deleteOriginalDtsFileIfExists();
 
   generateNewIndexDtsFile();
 
-  copyTheReadmeFile();
+  copyReadmeFile();
 
-  copyAndManipulateThePackageJsonFile();
+  copyAndManipulatePackageJsonFile();
 
   console.log('DONE !!!');
 }
 
-function deleteOriginalDtsFileIdExists() {
+function deleteOriginalDtsFileIfExists() {
   // Step 1: delete the index.d.ts file
   try {
     fs.unlinkSync(`${outFolderName}/index.d.ts`);
@@ -59,14 +59,14 @@ function generateNewIndexDtsFile() {
  * @description
  * Copy README file as-is to the output folder.
  */
-function copyTheReadmeFile() {
+function copyReadmeFile() {
   console.log('- Step 3: copy the README.md file');
   const readStreamReadmeMd = fs.createReadStream('./README.md');
   const writeStreamReadmeMd = fs.createWriteStream(`./${outFolderName}/README.md`);
   readStreamReadmeMd.pipe(writeStreamReadmeMd);
 }
 
-function copyAndManipulateThePackageJsonFile() {
+function copyAndManipulatePackageJsonFile() {
   console.log('- Step 4: copy & manipulate the package.json file');
   // Step 1: get the original package.json file
   const packageJson = JSON.parse(fs.readFileSync('./package.json').toString());
