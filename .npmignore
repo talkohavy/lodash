@@ -1,6 +1,8 @@
 .eslintrc.json
 .prettierrc.js
 .prettierignore
+.eslintignore
+.husky
 .npmrc.example
 jsconfig.json
 .vscode/
@@ -9,3 +11,5 @@ toolbox/
 .changeset/
 .github/
 src/
+biome.jsom
+CHANGELOG.md

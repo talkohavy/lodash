@@ -18,7 +18,7 @@
     "cs-commit": "pnpm changeset",
     "cs-status": "pnpm changeset status --verbose",
     "cs-bump": "pnpm changeset version",
-    "cs-publish2": "npm test && npm run format-fix && npm run build && pnpm changeset publish",
+    "cs-pre-publish": "npm test && npm run format-fix && npm run build",
     "cs-publish": "pnpm changeset publish",
     "preversion": "npm test",
     "version": "npm run format-fix && npm run build",
