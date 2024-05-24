@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.2
+
+### Patch Changes
+
+- 4298dff: don't include src
+
 ## 1.1.1
 
 ### Patch Changes
