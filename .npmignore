@@ -11,5 +11,5 @@ toolbox/
 .changeset/
 .github/
 src/
-biome.jsom
+biome.json
 CHANGELOG.md

@@ -49,8 +49,8 @@
   },
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.cjs"
+      "import": "./dist/lib/index.js",
+      "require": "./dist/lib/index.cjs"
     },
     "./addItemToList": "./lib/addItemToList.js",
     "./areObjectsEqual": "./lib/areObjectsEqual.js",
