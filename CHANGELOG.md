@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 7ebab7e: added cs scriptd to package.json
+- 7ebab7e: added cs script to package.json
 
 ## 1.1.0
 
