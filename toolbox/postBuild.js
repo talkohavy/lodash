@@ -8,13 +8,13 @@ const sortAlphabetically = (a, b) => a.name.toLowerCase().localeCompare(b.name.t
 postBuild();
 
 async function postBuild() {
-  deleteOriginalDtsFileIfExists();
+  // deleteOriginalDtsFileIfExists();
 
   generateNewIndexDtsFile();
 
-  copyReadmeFile();
+  // copyReadmeFile();
 
-  copyAndManipulatePackageJsonFile();
+  // copyAndManipulatePackageJsonFile();
 
   console.log('DONE !!!');
 }
