@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.3
+
+### Patch Changes
+
+- 9876dac: cleaner dist folder
+
 ## 1.1.2
 
 ### Patch Changes
