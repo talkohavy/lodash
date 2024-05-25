@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.7
+
+### Patch Changes
+
+- 0ff52da: removed the nesting of dist from package.json
+
 ## 1.1.6
 
 ### Patch Changes
