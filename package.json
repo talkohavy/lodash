@@ -1,10 +1,10 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.1.4",
+  "version": "1.1.7",
   "description": "A bunch of lodash-like methods",
-  "main": "dist/lib/index.js",
-  "module": "dist/lib/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
     "clean": "rm -rf node_modules",
@@ -18,7 +18,7 @@
     "cs-add": "pnpm changeset add",
     "cs-status": "pnpm changeset status --verbose",
     "cs-bump": "npm test && pnpm changeset version",
-    "cs-publish": "npm run build && pnpm changeset publish",
+    "cs-publish": "npm run build && cd dist && pnpm changeset publish",
     "build:pre": "rm -rf dist",
     "build:intermediate": "tsc -p jsconfig.json",
     "build:post": "node ./toolbox/postBuild",
@@ -47,8 +47,8 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/lib/index.js",
-      "require": "./dist/lib/index.cjs"
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
     },
     "./addItemToList": "./lib/addItemToList.js",
     "./areObjectsEqual": "./lib/areObjectsEqual.js",

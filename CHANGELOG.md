@@ -1,5 +1,23 @@
 # @talkohavy/lodash
 
+## 1.1.7
+
+### Patch Changes
+
+- 0ff52da: removed the nesting of dist from package.json
+
+## 1.1.6
+
+### Patch Changes
+
+- 668ddd3: Remove .changeset from final published build (copying .npmignore file as well into dist)
+
+## 1.1.5
+
+### Patch Changes
+
+- b7c783b: Changeset is now working along side the cd dist approach
+
 ## 1.1.4
 
 ### Patch Changes
