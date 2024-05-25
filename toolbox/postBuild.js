@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs, { cpSync } from 'fs';
 import os from 'os';
 import { globSync } from 'glob';
 
@@ -13,6 +13,10 @@ async function postBuild() {
   copyReadmeFile();
 
   copyAndManipulatePackageJsonFile();
+
+  copyChangesetDirectory();
+
+  copyNpmIgnore();
 
   console.log('DONE !!!');
 }
@@ -72,4 +76,14 @@ function copyAndManipulatePackageJsonFile() {
   // Step 4: create new package.json file in the output folder
   fs.writeFileSync(`./${outFolderName}/package.json`, JSON.stringify(packageJson));
   console.log('-- package.json file written successfully!');
+}
+
+function copyNpmIgnore() {
+  console.log('- Step 7: copy the .npmignore file');
+  cpSync('.npmignore', `${outFolderName}/.npmignore`);
+}
+
+function copyChangesetDirectory() {
+  console.log('- Step 5: copy the .changeset directory');
+  cpSync('.changeset', `${outFolderName}/.changeset`, { recursive: true });
 }
