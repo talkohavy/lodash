@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.4
+
+### Patch Changes
+
+- d34f04b: changed the way we do publish now
+
 ## 1.1.3
 
 ### Patch Changes
