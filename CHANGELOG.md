@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.5
+
+### Patch Changes
+
+- b7c783b: Changeset is now working along side the cd dist approach
+
 ## 1.1.4
 
 ### Patch Changes
