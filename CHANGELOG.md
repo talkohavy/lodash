@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.1.6
+
+### Patch Changes
+
+- 668ddd3: Remove .changeset from final published build (copying .npmignore file as well into dist)
+
 ## 1.1.5
 
 ### Patch Changes
