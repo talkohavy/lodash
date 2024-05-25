@@ -15,7 +15,7 @@
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "test": "node --test",
-    "cs-commit": "pnpm changeset add",
+    "cs-add": "pnpm changeset add",
     "cs-status": "pnpm changeset status --verbose",
     "cs-bump": "npm test && pnpm changeset version",
     "cs-publish": "npm run build && pnpm changeset publish",
