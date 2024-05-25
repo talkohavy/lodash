@@ -15,19 +15,17 @@
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "test": "node --test",
-    "cs-commit": "pnpm changeset",
+    "cs-commit": "pnpm changeset add",
     "cs-status": "pnpm changeset status --verbose",
-    "cs-bump": "pnpm changeset version",
-    "cs-pre-publish": "npm test && npm run format-fix && npm run build",
-    "cs-publish": "pnpm changeset publish",
-    "preversion": "npm test",
-    "version": "npm run format-fix && npm run build",
-    "postversion": "git push && git push --tags && cd dist && npm publish",
+    "cs-bump": "npm test && pnpm changeset version",
+    "cs-publish": "npm run build && pnpm changeset publish",
     "build:pre": "rm -rf dist",
     "build:intermediate": "tsc -p jsconfig.json",
     "build:post": "node ./toolbox/postBuild",
     "build": "pnpm run build:pre && pnpm run build:intermediate && pnpm run build:post",
-    "prepare": "husky install"
+    "old-way-preversion": "npm test",
+    "old-way-version": "npm run format-fix && npm run build",
+    "old-way-postversion": "git push && git push --tags && cd dist && npm publish"
   },
   "sideEffects": false,
   "contributors": [
@@ -73,14 +71,14 @@
     "email": "talkohavy@gmail.com"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.5.2",
+    "@biomejs/biome": "1.7.3",
     "@changesets/cli": "^2.27.3",
-    "@types/node": "^20.11.0",
+    "@types/node": "^20.12.12",
     "eslint": "^8.54.0",
-    "eslint-plugin-ezlint": "^1.2.1",
-    "glob": "^10.3.10",
-    "husky": "^8.0.3",
-    "prettier": "^3.1.0",
-    "typescript": "^5.3.3"
+    "eslint-plugin-ezlint": "^1.6.2",
+    "glob": "^10.4.1",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
   }
 }
