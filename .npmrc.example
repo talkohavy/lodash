@@ -4,4 +4,5 @@
 ; good config
 ; Set a new registry for a scoped package
 # @scope:registry=https://www.npmjs.com/org/
+registry=https://registry.npmjs.org/
 //registry.npmjs.org/:_authToken=npm_MYTOKEN
