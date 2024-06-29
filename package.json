@@ -47,24 +47,72 @@
   },
   "exports": {
     ".": {
-      "import": "./lib/index.js",
+      "import": {
+        "import": "./lib/index.js",
+        "types": "./index.d.ts"
+      },
       "require": "./lib/index.cjs"
     },
-    "./addItemToList": "./lib/addItemToList.js",
-    "./areObjectsEqual": "./lib/areObjectsEqual.js",
-    "./decodeBase64": "./lib/decodeBase64.js",
-    "./deepMerge": "./lib/deepMerge.js",
-    "./encodeBase64": "./lib/encodeBase64.js",
-    "./getArrMaxValue": "./lib/getArrMaxValue.js",
-    "./isNullish": "./lib/isNullish.js",
-    "./isObject": "./lib/isObject.js",
-    "./isEmpty": "./lib/isEmpty.js",
-    "./removeItemFromList": "./lib/removeItemFromList.js",
-    "./removeItemFromListByIndex": "./lib/removeItemFromListByIndex.js",
-    "./replaceItemOnListWith": "./lib/replaceItemOnListWith.js",
-    "./times": "./lib/times.js",
-    "./wrapInDebounce": "./lib/wrapInDebounce.js",
-    "./wrapInThrottle": "./lib/wrapInThrottle.js"
+    "./addItemToList": {
+      "import": "./lib/addItemToList.js",
+      "types": "./addItemToList.d.ts"
+    },
+    "./areObjectsEqual": {
+      "import": "./lib/areObjectsEqual.js",
+      "types": "./areObjectsEqual.d.ts"
+    },
+    "./decodeBase64": {
+      "import": "./lib/decodeBase64.js",
+      "types": "./decodeBase64.d.ts"
+    },
+    "./deepMerge": {
+      "import": "./lib/deepMerge.js",
+      "types": "./deepMerge.d.ts"
+    },
+    "./encodeBase64": {
+      "import": "./lib/encodeBase64.js",
+      "types": "./encodeBase64.d.ts"
+    },
+    "./getArrMaxValue": {
+      "import": "./lib/getArrMaxValue.js",
+      "types": "./getArrMaxValue.d.ts"
+    },
+    "./isEmpty": {
+      "import": "./lib/isEmpty.js",
+      "types": "./isEmpty.d.ts"
+    },
+    "./isNullish": {
+      "import": "./lib/isNullish.js",
+      "types": "./isNullish.d.ts"
+    },
+    "./isObject": {
+      "import": "./lib/isObject.js",
+      "types": "./isObject.d.ts"
+    },
+    "./removeItemFromList": {
+      "import": "./lib/removeItemFromList.js",
+      "types": "./removeItemFromList.d.ts"
+    },
+    "./removeItemFromListByIndex": {
+      "import": "./lib/removeItemFromListByIndex.js",
+      "types": "./removeItemFromListByIndex.d.ts"
+    },
+    "./replaceItemOnListWith": {
+      "import": "./lib/replaceItemOnListWith.js",
+      "types": "./replaceItemOnListWith.d.ts"
+    },
+    "./times": {
+      "import": "./lib/times.js",
+      "types": "./times.d.ts"
+    },
+    "./wrapInDebounce": {
+      "import": "./lib/wrapInDebounce.js",
+      "types": "./wrapInDebounce.d.ts"
+    },
+    "./wrapInThrottle": {
+      "import": "./lib/wrapInThrottle.js",
+      "types": "./wrapInThrottle.d.ts"
+    }
   },
   "bugs": {
     "url": "https://github.com/talkohavy/lodash/issues",
