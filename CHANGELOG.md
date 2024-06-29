@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.2.0
+
+### Minor Changes
+
+- 33a5ae7: Project converted to typescript
+
 ## 1.1.7
 
 ### Patch Changes
