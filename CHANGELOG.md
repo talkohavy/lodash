@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.2.1
+
+### Patch Changes
+
+- 352c7e2: wrapInThrottle outerArgs should be optional
+
 ## 1.2.0
 
 ### Minor Changes
