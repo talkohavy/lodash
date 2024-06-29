@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { addItemToList } from '../src/addItemToList.js';
+import { addItemToList } from '../dist/lib/addItemToList.js';
 
 describe('addItemToList', () => {
   it('adds 1 item to array', () => {

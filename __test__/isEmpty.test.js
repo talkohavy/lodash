@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isEmpty } from '../src/isEmpty.js';
+import { isEmpty } from '../dist/lib/isEmpty.js';
 
 describe('isEmpty', () => {
   it('empty object should return true', () => {
@@ -95,9 +95,7 @@ describe('isEmpty', () => {
   });
 
   it('class without methods and without class fields should return true', () => {
-    class Person {
-      constructor() {}
-    }
+    class Person {}
 
     const person = new Person();
 
@@ -124,8 +122,6 @@ describe('isEmpty', () => {
 
   it('class with methods and without class fields should return true', () => {
     class Person {
-      constructor() {}
-
       getNameJohn() {
         return 'John';
       }

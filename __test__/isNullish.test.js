@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isNullish } from '../src/isNullish.js';
+import { isNullish } from '../dist/lib/isNullish.js';
 
 describe('isNullish', () => {
   it('null should return true', () => {
@@ -112,7 +112,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - NaN should return false', () => {
-    const value = NaN;
+    const value = Number.NaN;
 
     const actual = isNullish(value);
     const expected = false;

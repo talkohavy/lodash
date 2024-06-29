@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isObject } from '../src/isObject.js';
+import { isObject } from '../dist/lib/isObject.js';
 
 describe('isObject', () => {
   it('object should return true', () => {
@@ -76,7 +76,7 @@ describe('isObject', () => {
   });
 
   it('NaN should return false', () => {
-    const value = NaN;
+    const value = Number.NaN;
 
     const actual = isObject(value);
     const expected = false;
