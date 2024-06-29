@@ -14,7 +14,7 @@
  * processChange({ a: 1, b: 6 });
  * // output: 2
  */
-function wrapInThrottle(fnToRun: (outerArgs?: any) => any, milliseconds = 300): (outerArgs: any) => any {
+function wrapInThrottle(fnToRun: (outerArgs?: any) => any, milliseconds = 300): (outerArgs?: any) => any {
   let alreadyExecuting = false;
 
   return (...outerArgs: any) => {
