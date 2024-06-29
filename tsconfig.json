@@ -35,7 +35,7 @@
     "declaration": true, // Generate .d.ts files from TypeScript and JavaScript files in your project.
     // "declarationMap": true, // Create sourcemaps for d.ts files.
     // "emitDeclarationOnly": true, // Only output d.ts files and not JavaScript files.
-    "sourceMap": false, // default value is false. Create source map files for emitted JavaScript files.
+    "sourceMap": true, // default value is false. Create source map files for emitted JavaScript files.
     "outDir": "./dist/lib", // Specify an output folder for all emitted files.
     "noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
     "removeComments": true, // Disable emitting comments.
@@ -56,8 +56,8 @@
     // Section 7: Type Checking
     // ------------------------
     "noImplicitOverride": true, // If you use inheritance, and you provide an override function, you must specify that it is an override function.
-    // "strict": true // <--- Enable all strict type-checking options.
-    "noImplicitAny": false, // <--- Enable error reporting for expressions and declarations with an implied 'any' type.
+    "strict": true, // <--- Enable all strict type-checking options.
+    "noImplicitAny": true, // <--- Enable error reporting for expressions and declarations with an implied 'any' type.
     "strictNullChecks": true, // When type checking, take into account 'null' and 'undefined'. */
     "strictFunctionTypes": true, // When assigning functions, check to ensure parameters and the return values are subtype-compatible. */
     "strictBindCallApply": true, // Check that the arguments for 'bind', 'call', and 'apply' methods match the original function. */
@@ -79,11 +79,9 @@
     // -----------------------
     // Section 8: Completeness
     // -----------------------
-    "skipLibCheck": true,
-
-    "ignoreDeprecations": "5.0"
+    "skipLibCheck": true
   },
   "compileOnSave": true,
   "exclude": ["node_modules"],
-  "include": ["src/index.js"]
+  "include": ["src/index.ts"]
 }

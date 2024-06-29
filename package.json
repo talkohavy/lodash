@@ -20,7 +20,7 @@
     "cs-bump": "npm test && pnpm changeset version",
     "cs-publish": "npm run build && cd dist && pnpm changeset publish",
     "build:pre": "rm -rf dist",
-    "build:intermediate": "tsc -p jsconfig.json",
+    "build:intermediate": "tsc -p tsconfig.json",
     "build:post": "node ./toolbox/postBuild",
     "build": "pnpm run build:pre && pnpm run build:intermediate && pnpm run build:post",
     "old-way-preversion": "npm test",

@@ -1,12 +1,12 @@
 import { isObject } from './isObject.js';
 
 /**
- * @description This function accepts two objects, and returns whether or not they are essentially equal.
- * @param {Record<string, number | string | boolean | object>} obj1 - The object to compare against.
- * @param {Record<string, number | string | boolean | object>} obj2 - The second input object.
- * @returns { boolean } Returns true or false.
+ * @description
+ * This function accepts two objects, and returns whether or not they are essentially equal.
+ * obj1 is the object to compare against.
+ * obj2 is the second input object.
  */
-function areObjectsEqual(obj1, obj2) {
+function areObjectsEqual(obj1: any, obj2: any): boolean {
   const allKeysArr = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
 
   return allKeysArr.every((key) => {
