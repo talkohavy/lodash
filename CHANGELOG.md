@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.0
+
+### Minor Changes
+
+- 3a82cf5: new typescript version of the package
+
 ## 1.2.1
 
 ### Patch Changes
