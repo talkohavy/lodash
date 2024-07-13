@@ -6,45 +6,6 @@
   "module": "lib/index.js",
   "types": "index.d.ts",
   "type": "module",
-  "scripts": {
-    "clean": "rm -rf node_modules",
-    "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
-    "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
-    "format": "biome format --verbose ./src",
-    "format-fix": "biome format --verbose ./src --write",
-    "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
-    "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
-    "test": "node --test",
-    "cs-add": "pnpm changeset add",
-    "cs-status": "pnpm changeset status --verbose",
-    "cs-bump": "npm test && pnpm changeset version",
-    "cs-publish": "npm run build && cd dist && pnpm changeset publish",
-    "build:pre": "rm -rf dist",
-    "build:intermediate": "tsc -p tsconfig.json",
-    "build:post": "node ./toolbox/postBuild",
-    "build": "pnpm run build:pre && pnpm run build:intermediate && pnpm run build:post",
-    "old-way-preversion": "npm test",
-    "old-way-version": "npm run format-fix && npm run build",
-    "old-way-postversion": "git push && git push --tags && cd dist && npm publish"
-  },
-  "sideEffects": false,
-  "contributors": [
-    {
-      "name": "Tal Kohavy",
-      "email": "talkohavy@gmail.com",
-      "url": "https://github.com/talkohavy"
-    }
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/talkohavy/lodash"
-  },
-  "author": "Tal Kohavy",
-  "license": "MIT",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "exports": {
     ".": {
       "import": {
@@ -113,6 +74,42 @@
       "import": "./lib/wrapInThrottle.js",
       "types": "./wrapInThrottle.d.ts"
     }
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "lint": "eslint -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "lint-fix": "eslint --fix -c ./.eslintrc.json --ignore-path ./.eslintignore 'src/**/*.{js,jsx,tsx,ts,d.ts,cjs,mjs}'",
+    "format": "biome format --verbose ./src",
+    "format-fix": "biome format --verbose ./src --write",
+    "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
+    "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
+    "build": "node ./build.config.js",
+    "test": "node --test",
+    "cs-add": "pnpm changeset add",
+    "cs-status": "pnpm changeset status --verbose",
+    "cs-bump": "npm test && pnpm changeset version",
+    "cs-publish": "npm run build && cd dist && pnpm changeset publish",
+    "old-way-preversion": "npm test",
+    "old-way-version": "npm run format-fix && npm run build",
+    "old-way-postversion": "git push && git push --tags && cd dist && npm publish"
+  },
+  "sideEffects": false,
+  "contributors": [
+    {
+      "name": "Tal Kohavy",
+      "email": "talkohavy@gmail.com",
+      "url": "https://github.com/talkohavy"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/talkohavy/lodash"
+  },
+  "author": "Tal Kohavy",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "bugs": {
     "url": "https://github.com/talkohavy/lodash/issues",
