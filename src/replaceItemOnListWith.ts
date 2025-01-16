@@ -5,7 +5,7 @@ type ReplaceItemOnListWithProps<T> = {
 };
 
 // TODO: make this use `with` when you move to node 20
-export function replaceItemOnListWith<T>(props: ReplaceItemOnListWithProps<T>): Array<T> {
+export function replaceItemOnListWith<T = any>(props: ReplaceItemOnListWithProps<T>): Array<T> {
   const { list, newItem, index } = props;
 
   return list.map((oldItem, currentIndex) => (currentIndex === index ? newItem : oldItem));
