@@ -9,70 +9,73 @@
   "exports": {
     ".": {
       "import": {
-        "import": "./lib/index.js",
-        "types": "./index.d.ts"
+        "types": "./index.d.ts",
+        "default": "./lib/index.js"
       },
-      "require": "./lib/index.cjs"
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./lib/index.cjs"
+      }
     },
     "./addItemToList": {
-      "import": "./lib/addItemToList.js",
-      "types": "./addItemToList.d.ts"
+      "types": "./addItemToList.d.ts",
+      "default": "./lib/addItemToList.js"
     },
     "./areObjectsEqual": {
-      "import": "./lib/areObjectsEqual.js",
-      "types": "./areObjectsEqual.d.ts"
+      "types": "./areObjectsEqual.d.ts",
+      "default": "./lib/areObjectsEqual.js"
     },
     "./decodeBase64": {
-      "import": "./lib/decodeBase64.js",
-      "types": "./decodeBase64.d.ts"
+      "types": "./decodeBase64.d.ts",
+      "default": "./lib/decodeBase64.js"
     },
     "./deepMerge": {
-      "import": "./lib/deepMerge.js",
-      "types": "./deepMerge.d.ts"
+      "types": "./deepMerge.d.ts",
+      "default": "./lib/deepMerge.js"
     },
     "./encodeBase64": {
-      "import": "./lib/encodeBase64.js",
-      "types": "./encodeBase64.d.ts"
+      "types": "./encodeBase64.d.ts",
+      "default": "./lib/encodeBase64.js"
     },
     "./getArrMaxValue": {
-      "import": "./lib/getArrMaxValue.js",
-      "types": "./getArrMaxValue.d.ts"
+      "types": "./getArrMaxValue.d.ts",
+      "default": "./lib/getArrMaxValue.js"
     },
     "./isEmpty": {
-      "import": "./lib/isEmpty.js",
-      "types": "./isEmpty.d.ts"
+      "types": "./isEmpty.d.ts",
+      "default": "./lib/isEmpty.js"
     },
     "./isNullish": {
-      "import": "./lib/isNullish.js",
-      "types": "./isNullish.d.ts"
+      "types": "./isNullish.d.ts",
+      "default": "./lib/isNullish.js"
     },
     "./isObject": {
-      "import": "./lib/isObject.js",
-      "types": "./isObject.d.ts"
+      "types": "./isObject.d.ts",
+      "default": "./lib/isObject.js"
     },
     "./removeItemFromList": {
-      "import": "./lib/removeItemFromList.js",
-      "types": "./removeItemFromList.d.ts"
+      "types": "./removeItemFromList.d.ts",
+      "default": "./lib/removeItemFromList.js"
     },
     "./removeItemFromListByIndex": {
-      "import": "./lib/removeItemFromListByIndex.js",
-      "types": "./removeItemFromListByIndex.d.ts"
+      "types": "./removeItemFromListByIndex.d.ts",
+      "default": "./lib/removeItemFromListByIndex.js"
     },
     "./replaceItemOnListWith": {
-      "import": "./lib/replaceItemOnListWith.js",
-      "types": "./replaceItemOnListWith.d.ts"
+      "types": "./replaceItemOnListWith.d.ts",
+      "default": "./lib/replaceItemOnListWith.js"
     },
     "./times": {
-      "import": "./lib/times.js",
-      "types": "./times.d.ts"
+      "types": "./times.d.ts",
+      "default": "./lib/times.js"
     },
     "./wrapInDebounce": {
-      "import": "./lib/wrapInDebounce.js",
-      "types": "./wrapInDebounce.d.ts"
+      "types": "./wrapInDebounce.d.ts",
+      "default": "./lib/wrapInDebounce.js"
     },
     "./wrapInThrottle": {
-      "import": "./lib/wrapInThrottle.js",
-      "types": "./wrapInThrottle.d.ts"
+      "types": "./wrapInThrottle.d.ts",
+      "default": "./lib/wrapInThrottle.js"
     }
   },
   "scripts": {
