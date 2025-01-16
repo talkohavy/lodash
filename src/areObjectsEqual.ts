@@ -1,4 +1,4 @@
-import { isObject } from './isObject.js';
+import { deepEqual } from 'node:assert';
 
 /**
  * @description
@@ -7,18 +7,27 @@ import { isObject } from './isObject.js';
  * obj2 is the second input object.
  */
 export function areObjectsEqual(obj1: any, obj2: any): boolean {
-  const allKeysArr = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
-
-  return allKeysArr.every((key) => {
-    if (!(key in obj1 && key in obj2)) return false;
-
-    // @ts-ignore
-    const isObjNumericValue = isObject(obj1[key]) + isObject(obj2[key]);
-
-    if (isObjNumericValue === 0) return obj1[key] === obj2[key];
-
-    if (isObjNumericValue === 1) return false;
-
-    if (isObjNumericValue === 2) return areObjectsEqual(obj1[key], obj2[key]);
-  });
+  try {
+    deepEqual(obj1, obj2);
+    return true;
+  } catch (_error) {
+    return false;
+  }
 }
+
+// export function areObjectsEqual(obj1: any, obj2: any): boolean {
+//   const allKeysArr = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
+
+//   return allKeysArr.every((key) => {
+//     if (!(key in obj1 && key in obj2)) return false;
+
+//     // @ts-ignore
+//     const isObjNumericValue = isObject(obj1[key]) + isObject(obj2[key]);
+
+//     if (isObjNumericValue === 0) return obj1[key] === obj2[key];
+
+//     if (isObjNumericValue === 1) return false;
+
+//     if (isObjNumericValue === 2) return areObjectsEqual(obj1[key], obj2[key]);
+//   });
+// }
