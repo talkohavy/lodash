@@ -14,7 +14,7 @@
  * processChange({ a: 1, b: 6 });
  * // output: Saving data { a: 1, b: 6 }
  */
-function wrapInDebounce(fnToRun: (outerArgs?: any) => void, milliseconds = 300): (outerArgs: any) => any {
+export function wrapInDebounce(fnToRun: (outerArgs?: any) => void, milliseconds = 300): (outerArgs: any) => any {
   let timerId: NodeJS.Timeout | null;
 
   return (...outerArgs: any) => {
@@ -26,5 +26,3 @@ function wrapInDebounce(fnToRun: (outerArgs?: any) => void, milliseconds = 300):
     }, milliseconds);
   };
 }
-
-export { wrapInDebounce };

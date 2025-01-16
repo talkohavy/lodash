@@ -8,7 +8,7 @@ import { isObject } from './isObject.js';
  * console.log(deepMerge(first,second)); // Expected result: { a: "daniel", b: { aaa: { one: 1 }, bbb: true, ccc: "noooo" }, c: [1,2], d: 'new' }
  */
 // Note! this must be an arrow function!
-const deepMerge = (obj1: any, obj2: any): any =>
+export const deepMerge = (obj1: any, obj2: any): any =>
   [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].reduce((acc: any, key: string) => {
     acc[key] =
       obj1[key] && obj2[key] && isObject(obj1[key]) && isObject(obj2[key])
@@ -17,5 +17,3 @@ const deepMerge = (obj1: any, obj2: any): any =>
 
     return acc;
   }, {});
-
-export { deepMerge };

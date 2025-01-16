@@ -3,10 +3,8 @@ type TimesProps = {
   funcToRun: (iterationNumber: number) => void;
 };
 
-function times(props: TimesProps) {
+export function times(props: TimesProps) {
   const { howMany, funcToRun } = props;
 
   for (let i = 0; i < howMany; i++) funcToRun(i);
 }
-
-export { times };

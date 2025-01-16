@@ -6,7 +6,7 @@ import { isObject } from './isObject.js';
  * obj1 is the object to compare against.
  * obj2 is the second input object.
  */
-function areObjectsEqual(obj1: any, obj2: any): boolean {
+export function areObjectsEqual(obj1: any, obj2: any): boolean {
   const allKeysArr = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])];
 
   return allKeysArr.every((key) => {
@@ -22,5 +22,3 @@ function areObjectsEqual(obj1: any, obj2: any): boolean {
     if (isObjNumericValue === 2) return areObjectsEqual(obj1[key], obj2[key]);
   });
 }
-
-export { areObjectsEqual };

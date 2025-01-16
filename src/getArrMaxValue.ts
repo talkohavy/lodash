@@ -10,7 +10,7 @@ type GetArrMaxValueProps<T> = {
  *
  * const maxLength = getArrMaxValue({ arr: series, predicate: (item) => item.data.length });
  */
-function getArrMaxValue<T>(props: GetArrMaxValueProps<T>): number {
+export function getArrMaxValue<T>(props: GetArrMaxValueProps<T>): number {
   const { arr, valueExtractor } = props;
 
   return arr.reduce((curMaxValue: number, curItem: T) => {
@@ -19,5 +19,3 @@ function getArrMaxValue<T>(props: GetArrMaxValueProps<T>): number {
     return curMaxValue > curValue ? curMaxValue : curValue;
   }, Number.NEGATIVE_INFINITY);
 }
-
-export { getArrMaxValue };
