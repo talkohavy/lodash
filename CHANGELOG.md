@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.1
+
+### Patch Changes
+
+- first time building with experience
+
 ## 1.3.0
 
 ### Minor Changes
