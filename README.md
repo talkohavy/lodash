@@ -56,16 +56,6 @@ const obj = {};
 console.log(isObject(obj));
 ```
 
-You can even import particular parts to keep your bundle size small:
-
-```js
-import { isObject } from '@talkohavy/lodash/isObject';
-
-const obj = {};
-
-console.log(isObject(obj));
-```
-
 ### All functions
 
 #### addItemToList
