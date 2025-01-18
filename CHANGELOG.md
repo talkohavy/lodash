@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.3
+
+### Patch Changes
+
+- Switvhed to rollup bundler to bundle for both esm & cjs with types included.
+
 ## 1.3.2
 
 ### Patch Changes
