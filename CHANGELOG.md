@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.4
+
+### Patch Changes
+
+- type in shipped package.json is now commonjs (not module). Consuming projects can now have correct types.
+
 ## 1.3.3
 
 ### Patch Changes
