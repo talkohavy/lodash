@@ -39,12 +39,12 @@ async function buildPackageConfig() {
 }
 
 function cleanDistDirectory() {
-  console.log('- Step 1: clear the dist directory');
+  console.log(`${greenColor}- Step 1:${stopColor} clear the dist directory`);
   execSync('rm -rf dist');
 }
 
 function build() {
-  console.log('- Step 2: build');
+  console.log(`${greenColor}- Step 2:${stopColor} build`);
   execSync('rollup --config'); // or the full command: rollup --config rollup.config.mjs
 }
 
@@ -75,16 +75,13 @@ function copyStaticFiles() {
 }
 
 function manipulatePackageJsonFile() {
-  console.log(`${greenColor}- Step 5:${stopColor} copy & manipulate the package.json file`);
+  console.log(`${greenColor}- Step 4:${stopColor} copy & manipulate the package.json file`);
 
   const packageJsonPath = path.resolve(ROOT_PROJECT, outDirName, 'package.json');
 
   // Step: get the original package.json file
   /** @type {PackageJson} */
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath).toString());
-
-  packageJson.type = 'commonjs';
-  console.log(`  • ${blueColor}changed${stopColor} from module to commonjs`);
 
   delete packageJson.private;
   delete packageJson.scripts;
