@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.5
+
+### Patch Changes
+
+- Removed option to import not from root. We no longer support importing like so: `import { isObject } from '@talkohavy/lodash/isObject';`.
+
 ## 1.3.4
 
 ### Patch Changes
