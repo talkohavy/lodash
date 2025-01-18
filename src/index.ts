@@ -31,21 +31,3 @@ export {
   wrapInDebounce,
   wrapInThrottle,
 };
-
-export default {
-  addItemToList,
-  areObjectsEqual,
-  decodeBase64,
-  deepMerge,
-  encodeBase64,
-  getArrMaxValue,
-  isEmpty,
-  isNullish,
-  isObject,
-  removeItemFromList,
-  removeItemFromListByIndex,
-  replaceItemOnListWith,
-  times,
-  wrapInDebounce,
-  wrapInThrottle,
-};

@@ -29,7 +29,7 @@ buildPackageConfig();
 async function buildPackageConfig() {
   cleanDistDirectory();
 
-  buildWithTsc();
+  build();
 
   copyStaticFiles();
 
@@ -43,9 +43,9 @@ function cleanDistDirectory() {
   execSync('rm -rf dist');
 }
 
-function buildWithTsc() {
-  console.log('- Step 2: build with tsc');
-  execSync('tsc -p tsconfig.json');
+function build() {
+  console.log('- Step 2: build');
+  execSync('rollup --config'); // or the full command: rollup --config rollup.config.mjs
 }
 
 function copyStaticFiles() {

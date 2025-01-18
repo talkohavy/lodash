@@ -32,12 +32,12 @@
     "module": "ESNext", // <--- defaults to `commonjs`. Specify what module code is generated.
     "moduleResolution": "Bundler", // Specify how TypeScript looks up a file from a given module specifier.
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": false,
     "baseUrl": "./", // Specify the base directory to resolve non-relative module names.
     "typeRoots": ["node_modules/@types"], // Specify multiple folders that act like './node_modules/@types'.
     "paths": {
       "@src/*": ["src/*"]
     },
+    // "allowImportingTsExtensions": true,
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
     // "allowUmdGlobalAccess": true,                     /* Allow accessing UMD globals from modules. */
@@ -62,12 +62,11 @@
     // ---------------
     "noEmit": false, // Disable emitting files from a compilation.
     "declaration": true, // Generate .d.ts files from TypeScript and JavaScript files in your project.
-    "sourceMap": false, // defaults to `false`. Create source map files for emitted JavaScript files.
-    "outDir": "./dist/lib", // Specify an output folder for all emitted files.
+    "sourceMap": true, // defaults to `false`. Create source map files for emitted JavaScript files.
+    "outDir": "dist", // Specify an output folder for all emitted files.
     "noEmitOnError": true, // Disable emitting files if any type checking errors are reported.
-    "removeComments": true, // Disable emitting comments.
-    "declarationDir": "./dist", // Specify the output directory for generated declaration files.
-    // "outDir": "./dist", // no need to have this! all the microservices are being used just as they are, and the only thing being bundled is the app-frontend, which gets bundled using vite, which already has an outDir set in its config file.
+    "removeComments": false, // Disable emitting comments.
+    "declarationDir": "./dist/types", // Specify the output directory for generated declaration files.
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
     // "emitDeclarationOnly": true,                      /* Only output d.ts files and not JavaScript files. */
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
