@@ -1,4 +1,4 @@
-type GetArrMaxValueProps<T> = {
+export type GetArrMaxValueProps<T> = {
   arr: Array<T>;
   valueExtractor: (value: T) => number;
 };

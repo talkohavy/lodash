@@ -1,4 +1,4 @@
-type RemoveItemFromListByIndexProps<T> = {
+export type RemoveItemFromListByIndexProps<T> = {
   list: Array<T>;
   index: number;
 };

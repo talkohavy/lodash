@@ -1,4 +1,4 @@
-type RemoveItemFromListProps<T> = {
+export type RemoveItemFromListProps<T> = {
   list: Array<T>;
   filterBy: (item: T) => boolean;
 };

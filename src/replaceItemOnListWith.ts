@@ -1,4 +1,4 @@
-type ReplaceItemOnListWithProps<T> = {
+export type ReplaceItemOnListWithProps<T> = {
   list: Array<T>;
   newItem: T;
   index: number;

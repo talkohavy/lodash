@@ -1,4 +1,4 @@
-type TimesProps = {
+export type TimesProps = {
   howMany: number;
   funcToRun: (iterationNumber: number) => void;
 };
