@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.3.6
+
+### Patch Changes
+
+- Exporting types now from main index.ts file.
+
 ## 1.3.5
 
 ### Patch Changes
