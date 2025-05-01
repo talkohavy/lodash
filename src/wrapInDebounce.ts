@@ -1,8 +1,17 @@
+type AnyFunction = (...args: any[]) => any;
+
+type PromiseActions = {
+  resolve: (value: any) => void;
+  reject: (reason?: any) => void;
+};
+
 /**
  * @description
- * Acts as a takeLatest function. A function wrapped with wrapInDebounce can be fired multiple times. On the first call, the clearTimeout(timer) step is not necessary since there is nothing scheduled yet.
- * But since the second time onwards, each invocation needs to reset the timer, or, in other words, cancel the previous calls to fnToRun, and reschedule it for a new time in the future.
- * This goes on as long as the visitor keeps hitting the keys under 300 ms. The last schedule won't get cleared, so that fnToRun() would finally be called.
+ * A function wrapped with wrapInDebounce can be fired multiple times. On the first call, the clearTimeout(timer) step
+ * is doing nothing, since there is nothing scheduled yet. However, from the second time onwards, each invocation needs
+ * to reset the timer, or, in other words, cancel the previous call to `callback`, and reschedule it for a new time in the
+ * future. This goes on as long as the user keeps invoking the debounce fn under X ms. The last schedule won't get cleared,
+ * so that `callback` would finally be called.
  * @example
  * // How to use:
  * function saveInput(data = 'none') {
@@ -14,15 +23,32 @@
  * processChange({ a: 1, b: 6 });
  * // output: Saving data { a: 1, b: 6 }
  */
-export function wrapInDebounce(fnToRun: (outerArgs?: any) => void, milliseconds = 300): (outerArgs: any) => any {
-  let timerId: NodeJS.Timeout | null;
+export function wrapInDebounce<T extends AnyFunction>(
+  callback: T,
+  milliseconds = 300,
+): (...args: Parameters<T>) => Promise<ReturnType<T>> {
+  let timerId: ReturnType<typeof setTimeout> | null;
+  const promisesArray: Array<PromiseActions> = [];
 
-  return (...outerArgs: any) => {
+  return function returnedDebouncedFunc(...args: Parameters<T>): Promise<ReturnType<T>> {
     if (timerId) clearTimeout(timerId);
 
-    timerId = setTimeout(() => {
-      timerId = null;
-      fnToRun(...outerArgs); // This line is similar as to doing: fnToRun.apply(null, arguments); without passing outerArgs, which is something you might see in other people's code.
-    }, milliseconds);
+    const debouncedPromise = new Promise<ReturnType<T>>(function debouncePromiseExecutor(resolve, reject) {
+      promisesArray.push({ resolve, reject });
+
+      try {
+        timerId = setTimeout(() => {
+          timerId = null;
+
+          const result = callback(...args);
+
+          promisesArray.forEach(({ resolve }) => resolve(result));
+        }, milliseconds);
+      } catch (error) {
+        promisesArray.forEach(({ reject }) => reject(error));
+      }
+    });
+
+    return debouncedPromise;
   };
 }
