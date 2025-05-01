@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.4.0
+
+### Minor Changes
+
+- The function `wrapInDebounce` now supports async callbacks, and also a return type.
+
 ## 1.3.6
 
 ### Patch Changes
