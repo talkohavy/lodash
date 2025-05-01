@@ -1,10 +1,10 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isNullish } from '../dist/lib/isNullish.js';
+import { isNullish } from '../dist/index.esm.mjs';
 
 describe('isNullish', () => {
   it('null should return true', () => {
-    const value = null;
+    const value: null = null;
 
     const actual = isNullish(value);
     const expected = true;
@@ -13,7 +13,7 @@ describe('isNullish', () => {
   });
 
   it('undefined should return true', () => {
-    const value = undefined;
+    const value: undefined = undefined;
 
     const actual = isNullish(value);
     const expected = true;
@@ -22,7 +22,7 @@ describe('isNullish', () => {
   });
 
   it('number type should return false', () => {
-    const value = 123;
+    const value: number = 123;
 
     const actual = isNullish(value);
     const expected = false;
@@ -31,7 +31,7 @@ describe('isNullish', () => {
   });
 
   it('string type should return false', () => {
-    const value = 'some-word';
+    const value: string = 'some-word';
 
     const actual = isNullish(value);
     const expected = false;
@@ -40,7 +40,7 @@ describe('isNullish', () => {
   });
 
   it('boolean type should return false', () => {
-    const value = true;
+    const value: boolean = true;
 
     const actual = isNullish(value);
     const expected = false;
@@ -49,7 +49,7 @@ describe('isNullish', () => {
   });
 
   it('object type should return false', () => {
-    const value = { foo: 'bar' };
+    const value: { foo: string } = { foo: 'bar' };
 
     const actual = isNullish(value);
     const expected = false;
@@ -58,7 +58,7 @@ describe('isNullish', () => {
   });
 
   it('array type should return false', () => {
-    const value = ['foo', 'bar'];
+    const value: string[] = ['foo', 'bar'];
 
     const actual = isNullish(value);
     const expected = false;
@@ -67,7 +67,7 @@ describe('isNullish', () => {
   });
 
   it('function type should return false', () => {
-    const value = () => {};
+    const value: () => void = () => {};
 
     const actual = isNullish(value);
     const expected = false;
@@ -76,7 +76,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - number 0 should return false', () => {
-    const value = 0;
+    const value: number = 0;
 
     const actual = isNullish(value);
     const expected = false;
@@ -85,7 +85,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - empty string should return false', () => {
-    const value = '';
+    const value: string = '';
 
     const actual = isNullish(value);
     const expected = false;
@@ -94,7 +94,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - empty object should return false', () => {
-    const value = {};
+    const value: Record<string, unknown> = {};
 
     const actual = isNullish(value);
     const expected = false;
@@ -103,7 +103,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - empty array should return false', () => {
-    const value = [];
+    const value: unknown[] = [];
 
     const actual = isNullish(value);
     const expected = false;
@@ -112,7 +112,7 @@ describe('isNullish', () => {
   });
 
   it('edge case - NaN should return false', () => {
-    const value = Number.NaN;
+    const value: number = Number.NaN;
 
     const actual = isNullish(value);
     const expected = false;

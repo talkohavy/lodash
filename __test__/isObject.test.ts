@@ -1,10 +1,10 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isObject } from '../dist/lib/isObject.js';
+import { isObject } from '../dist/index.esm.mjs';
 
 describe('isObject', () => {
   it('object should return true', () => {
-    const value = {};
+    const value: Record<string, unknown> = {};
 
     const actual = isObject(value);
     const expected = true;
@@ -13,7 +13,7 @@ describe('isObject', () => {
   });
 
   it('number should return false', () => {
-    const value = 123;
+    const value: number = 123;
 
     const actual = isObject(value);
     const expected = false;
@@ -22,7 +22,7 @@ describe('isObject', () => {
   });
 
   it('string should return false', () => {
-    const value = 'some-word';
+    const value: string = 'some-word';
 
     const actual = isObject(value);
     const expected = false;
@@ -31,7 +31,7 @@ describe('isObject', () => {
   });
 
   it('boolean should return false', () => {
-    const value = true;
+    const value: boolean = true;
 
     const actual = isObject(value);
     const expected = false;
@@ -40,7 +40,7 @@ describe('isObject', () => {
   });
 
   it('array should return false', () => {
-    const value = ['foo', 'bar'];
+    const value: string[] = ['foo', 'bar'];
 
     const actual = isObject(value);
     const expected = false;
@@ -49,7 +49,7 @@ describe('isObject', () => {
   });
 
   it('function should return false', () => {
-    const value = () => {};
+    const value: () => void = () => {};
 
     const actual = isObject(value);
     const expected = false;
@@ -58,7 +58,7 @@ describe('isObject', () => {
   });
 
   it('null should return false', () => {
-    const value = null;
+    const value: null = null;
 
     const actual = isObject(value);
     const expected = false;
@@ -67,7 +67,7 @@ describe('isObject', () => {
   });
 
   it('undefined should return false', () => {
-    const value = undefined;
+    const value: undefined = undefined;
 
     const actual = isObject(value);
     const expected = false;
@@ -76,7 +76,7 @@ describe('isObject', () => {
   });
 
   it('NaN should return false', () => {
-    const value = Number.NaN;
+    const value: number = Number.NaN;
 
     const actual = isObject(value);
     const expected = false;

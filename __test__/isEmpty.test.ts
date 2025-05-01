@@ -1,10 +1,10 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isEmpty } from '../dist/lib/isEmpty.js';
+import { isEmpty } from '../dist/index.esm.mjs';
 
 describe('isEmpty', () => {
   it('empty object should return true', () => {
-    const value = {};
+    const value: Record<string, unknown> = {};
 
     const actual = isEmpty(value);
     const expected = true;
@@ -13,7 +13,7 @@ describe('isEmpty', () => {
   });
 
   it('non-empty object should return false', () => {
-    const value = { foo: 'bar' };
+    const value: { foo: string } = { foo: 'bar' };
 
     const actual = isEmpty(value);
     const expected = false;
@@ -22,7 +22,7 @@ describe('isEmpty', () => {
   });
 
   it('empty array should return true', () => {
-    const value = [];
+    const value: unknown[] = [];
 
     const actual = isEmpty(value);
     const expected = true;
@@ -31,7 +31,7 @@ describe('isEmpty', () => {
   });
 
   it('non-empty array should return false', () => {
-    const value = ['foo', 'bar'];
+    const value: string[] = ['foo', 'bar'];
 
     const actual = isEmpty(value);
     const expected = false;
@@ -40,7 +40,7 @@ describe('isEmpty', () => {
   });
 
   it('empty string should return true', () => {
-    const value = '';
+    const value: string = '';
 
     const actual = isEmpty(value);
     const expected = true;
@@ -49,7 +49,7 @@ describe('isEmpty', () => {
   });
 
   it('non-empty string should return false', () => {
-    const value = 'not empty';
+    const value: string = 'not empty';
 
     const actual = isEmpty(value);
     const expected = false;
@@ -58,7 +58,7 @@ describe('isEmpty', () => {
   });
 
   it('truthy number should return true', () => {
-    const value = 0;
+    const value: number = 0;
 
     const actual = isEmpty(value);
     const expected = true;
@@ -67,7 +67,7 @@ describe('isEmpty', () => {
   });
 
   it('falsy number should return true', () => {
-    const value = 0;
+    const value: number = 0;
 
     const actual = isEmpty(value);
     const expected = true;
@@ -76,7 +76,7 @@ describe('isEmpty', () => {
   });
 
   it('function without attached methods should return true', () => {
-    const value = () => {};
+    const value: () => void = () => {};
 
     const actual = isEmpty(value);
     const expected = true;
@@ -85,7 +85,7 @@ describe('isEmpty', () => {
   });
 
   it('function with attached methods should return false', () => {
-    const value = () => {};
+    const value: { (): void; aaa: number } = (() => {}) as { (): void; aaa: number };
     value.aaa = 5;
 
     const actual = isEmpty(value);
@@ -107,7 +107,9 @@ describe('isEmpty', () => {
 
   it('class without methods but with class fields should return false', () => {
     class Person {
-      constructor(name) {
+      name: string;
+
+      constructor(name: string) {
         this.name = name;
       }
     }
@@ -122,7 +124,7 @@ describe('isEmpty', () => {
 
   it('class with methods and without class fields should return true', () => {
     class Person {
-      getNameJohn() {
+      getNameJohn(): string {
         return 'John';
       }
     }

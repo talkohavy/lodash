@@ -1,11 +1,11 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { addItemToList } from '../dist/lib/addItemToList.js';
+import { addItemToList } from '../dist/index.esm.mjs';
 
 describe('addItemToList', () => {
   it('adds 1 item to array', () => {
-    const newItem = { a: 'John' };
-    const oldArr = ['Sarah', 'Nicky', 'Don'];
+    const newItem: { a: string } = { a: 'John' };
+    const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });
 
@@ -16,8 +16,8 @@ describe('addItemToList', () => {
   });
 
   it('adding does not mutate the original array', () => {
-    const newItem = { a: 'John' };
-    const oldArr = ['Sarah', 'Nicky', 'Don'];
+    const newItem: { a: string } = { a: 'John' };
+    const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });
 
@@ -28,8 +28,8 @@ describe('addItemToList', () => {
   });
 
   it("adding an item increases array's length by +1", () => {
-    const newItem = { a: 'John' };
-    const oldArr = ['Sarah', 'Nicky', 'Don'];
+    const newItem: { a: string } = { a: 'John' };
+    const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });
 

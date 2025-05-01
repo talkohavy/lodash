@@ -27,7 +27,7 @@
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "build": "node ./build.config.js",
-    "test": "node --test"
+    "test": "node --experimental-strip-types --test **/*.test.ts"
   },
   "sideEffects": false,
   "contributors": [
