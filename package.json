@@ -22,12 +22,13 @@
     "clean": "rm -rf node_modules",
     "lint": "eslint -c eslint.config.js",
     "lint:fix": "eslint --fix -c eslint.config.js",
+    "tsc": "tsc -p tsconfig.json",
     "format": "biome format --verbose ./src",
     "format-fix": "biome format --verbose ./src --write",
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
     "build": "node ./build.config.js",
-    "test": "node --experimental-strip-types --test **/*.test.ts"
+    "test": "tsx --test **/*.test.ts"
   },
   "sideEffects": false,
   "contributors": [
@@ -66,6 +67,7 @@
     "prettier": "^3.5.3",
     "rollup": "^4.41.0",
     "tslib": "^2.8.1",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
   }
