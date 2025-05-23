@@ -1,5 +1,12 @@
 # @talkohavy/lodash
 
+## 1.4.1
+
+### Patch Changes
+
+- `wrapInThrottle` refactored.
+- Updated the README.md file.
+
 ## 1.4.0
 
 ### Minor Changes
