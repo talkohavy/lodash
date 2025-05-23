@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { wrapInDebounce } from '../dist/index.esm.mjs';
+import { wrapInDebounce } from '../src/wrapInDebounce.ts';
 
 describe('wrapInDebounce', () => {
   it('should execute the callback after the specified delay', async () => {

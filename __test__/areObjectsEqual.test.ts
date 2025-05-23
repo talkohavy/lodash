@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { areObjectsEqual } from '../dist/index.esm.mjs';
+import { areObjectsEqual } from '../src/areObjectsEqual.ts';
 
 describe('areObjectsEqual', () => {
   describe('same pointer', () => {

@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { removeItemFromListByIndex } from '../dist/index.esm.mjs';
+import { removeItemFromListByIndex } from '../src/removeItemFromListByIndex.ts';
 
 describe('removeItemFromListByIndex', () => {
   it('should remove an item at the specified index from a list of numbers', () => {

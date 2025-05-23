@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { replaceItemOnListWith } from '../dist/index.esm.mjs';
+import { replaceItemOnListWith } from '../src/replaceItemOnListWith.ts';
 
 describe('replaceItemOnListWith', () => {
   it('should replace an item at the specified index in a list of numbers', () => {

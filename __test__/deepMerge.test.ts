@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { deepMerge } from '../dist/index.esm.mjs';
+import { deepMerge } from '../src/deepMerge.ts';
 
 describe('deepMerge', () => {
   it('should merge two flat objects correctly', () => {

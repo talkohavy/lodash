@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { decodeBase64 } from '../dist/index.esm.mjs';
+import { decodeBase64 } from '../src/decodeBase64.ts';
 
 describe('decodeBase64', () => {
   it('should decode a base64 string correctly', () => {

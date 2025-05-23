@@ -1,10 +1,10 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { addItemToList } from '../dist/index.esm.mjs';
+import { addItemToList } from '../src/addItemToList.ts';
 
 describe('addItemToList', () => {
   it('adds 1 item to array', () => {
-    const newItem: { a: string } = { a: 'John' };
+    const newItem: string = 'John';
     const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });
@@ -16,7 +16,7 @@ describe('addItemToList', () => {
   });
 
   it('adding does not mutate the original array', () => {
-    const newItem: { a: string } = { a: 'John' };
+    const newItem: string = 'John';
     const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });
@@ -28,7 +28,7 @@ describe('addItemToList', () => {
   });
 
   it("adding an item increases array's length by +1", () => {
-    const newItem: { a: string } = { a: 'John' };
+    const newItem: string = 'John';
     const oldArr: string[] = ['Sarah', 'Nicky', 'Don'];
 
     const newArr = addItemToList({ list: oldArr, newItem });

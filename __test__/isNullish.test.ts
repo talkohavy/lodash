@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { isNullish } from '../dist/index.esm.mjs';
+import { isNullish } from '../src/isNullish.ts';
 
 describe('isNullish', () => {
   it('null should return true', () => {

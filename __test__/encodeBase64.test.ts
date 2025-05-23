@@ -1,7 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { encodeBase64 } from '../dist/index.esm.mjs';
-// import { encodeBase64 } from '../src/encodeBase64.ts';
+import { encodeBase64 } from '../src/encodeBase64.ts';
 
 describe('encodeBase64', () => {
   it('should encode a simple string correctly', () => {

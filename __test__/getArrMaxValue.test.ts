@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { getArrMaxValue } from '../dist/index.esm.mjs';
+import { getArrMaxValue } from '../src/getArrMaxValue.ts';
 
 describe('getArrMaxValue', () => {
   it('should find the max value in an array of numbers', () => {

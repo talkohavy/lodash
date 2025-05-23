@@ -1,6 +1,6 @@
 import assert from 'assert/strict';
 import { describe, it } from 'node:test';
-import { times } from '../dist/index.esm.mjs';
+import { times } from '../src/times.ts';
 
 describe('times', () => {
   it('should execute a function the specified number of times', () => {
