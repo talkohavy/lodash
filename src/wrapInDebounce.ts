@@ -40,7 +40,7 @@ export function wrapInDebounce<T extends AnyFunction>(
         timerId = setTimeout(() => {
           timerId = null;
 
-          const result = callback(...args);
+          const result: ReturnType<T> = callback(...args);
 
           promisesArray.forEach(({ resolve }) => resolve(result));
         }, milliseconds);

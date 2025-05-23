@@ -1,4 +1,4 @@
-import { isObject } from './isObject.js';
+import { isObject } from './isObject';
 
 /**
  * @example
@@ -13,7 +13,7 @@ export const deepMerge = (obj1: any, obj2: any): any =>
     acc[key] =
       obj1[key] && obj2[key] && isObject(obj1[key]) && isObject(obj2[key])
         ? deepMerge(obj1[key], obj2[key])
-        : obj2[key] ?? obj1[key];
+        : (obj2[key] ?? obj1[key]);
 
     return acc;
   }, {});
