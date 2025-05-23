@@ -146,6 +146,23 @@ const isItReally4 = isObject(value2);
 console.log(isItReally4); // <--- false
 ```
 
+### Module Formats
+
+This package supports both CommonJS and ESM imports:
+
+```js
+// ESM
+import { isEmpty } from '@talkohavy/lodash';
+
+// CommonJS
+const { isEmpty } = require('@talkohavy/lodash');
+```
+
+### Notes for Contributors
+
+- When adding imports in source files, use the `.js` extension (e.g., `import { foo } from './foo.js'`) even though the actual file has a `.ts` extension. This is required for ESM compatibility.
+- Test files import source files with `.ts` extension directly.
+
 ## License
 
 [MIT](LICENSE)
