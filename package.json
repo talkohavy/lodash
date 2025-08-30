@@ -2,10 +2,9 @@
   "name": "@talkohavy/lodash",
   "version": "1.4.1",
   "description": "A bunch of lodash-like methods",
+  "private": true,
   "main": "index.esm.mjs",
-  "module": "index.esm.mjs",
   "types": "types/index.d.ts",
-  "type": "module",
   "exports": {
     ".": {
       "import": {
@@ -27,7 +26,7 @@
     "format-fix": "biome format --verbose ./src --write",
     "format-prettier": "prettier . --check --config ./.prettierrc.js --ignore-path .prettierignore",
     "format-prettier-fix": "prettier . --write --config ./.prettierrc.js --ignore-path .prettierignore",
-    "build": "node ./build.config.js",
+    "build": "node ./build.config.mjs",
     "test": "tsx --test **/*.test.ts"
   },
   "sideEffects": false,
