@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.5.0
+
+### Minor Changes
+
+- if isNullish is true, the inferred type is null or undefined. Else, value is guaranteed to be anything but nullish.
+
 ## 1.4.1
 
 ### Patch Changes

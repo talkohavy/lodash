@@ -1,6 +1,6 @@
 {
   "name": "@talkohavy/lodash",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A bunch of lodash-like methods",
   "private": true,
   "main": "index.esm.mjs",
