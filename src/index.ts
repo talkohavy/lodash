@@ -11,11 +11,12 @@ import { removeItemFromList, type RemoveItemFromListProps } from './removeItemFr
 import { removeItemFromListByIndex, type RemoveItemFromListByIndexProps } from './removeItemFromListByIndex.js';
 import { replaceItemOnListWith, type ReplaceItemOnListWithProps } from './replaceItemOnListWith.js';
 import { times, type TimesProps } from './times.js';
-import { wrapInDebounce } from './wrapInDebounce.js';
+import { wrapInDebounce, type DebouncedFunction } from './wrapInDebounce.js';
 import { wrapInThrottle } from './wrapInThrottle.js';
 
 export type {
   AddItemToListProps,
+  DebouncedFunction,
   GetArrMaxValueProps,
   RemoveItemFromListProps,
   RemoveItemFromListByIndexProps,

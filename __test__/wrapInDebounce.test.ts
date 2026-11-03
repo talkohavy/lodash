@@ -104,4 +104,40 @@ describe('wrapInDebounce', () => {
     // We use a lower bound to account for timing inconsistencies
     assert.ok(executionTime >= 250, `Execution time (${executionTime}ms) should be close to default delay of 300ms`);
   });
+
+  it('should reject all pending promises when the callback throws', async () => {
+    const error = new Error('boom');
+    const debouncedFunc = wrapInDebounce((): never => {
+      throw error;
+    }, 20);
+
+    const promise1 = debouncedFunc();
+    const promise2 = debouncedFunc();
+
+    await assert.rejects(promise1, error);
+    await assert.rejects(promise2, error);
+  });
+
+  it('should settle each burst of calls separately', async () => {
+    let callCount = 0;
+    const debouncedFunc = wrapInDebounce((x: number): number => {
+      callCount++;
+      return x;
+    }, 20);
+
+    const firstBurst = await Promise.all([debouncedFunc(1), debouncedFunc(2)]);
+    const secondBurst = await Promise.all([debouncedFunc(3), debouncedFunc(4)]);
+
+    assert.deepStrictEqual(firstBurst, [2, 2]);
+    assert.deepStrictEqual(secondBurst, [4, 4]);
+    assert.strictEqual(callCount, 2);
+  });
+
+  it('should unwrap the result of an async callback', async () => {
+    const debouncedFunc = wrapInDebounce(async (x: number): Promise<number> => x * 2, 20);
+
+    const result: number = await debouncedFunc(21);
+
+    assert.strictEqual(result, 42);
+  });
 });

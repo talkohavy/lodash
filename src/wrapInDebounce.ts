@@ -1,54 +1,55 @@
 type AnyFunction = (...args: any[]) => any;
 
-type PromiseActions = {
-  resolve: (value: any) => void;
+type PromiseActions<R> = {
+  resolve: (value: R | PromiseLike<R>) => void;
   reject: (reason?: any) => void;
 };
 
-/**
- * @description
- * A function wrapped with wrapInDebounce can be fired multiple times. On the first call, the clearTimeout(timer) step
- * is doing nothing, since there is nothing scheduled yet. However, from the second time onwards, each invocation needs
- * to reset the timer, or, in other words, cancel the previous call to `callback`, and reschedule it for a new time in the
- * future. This goes on as long as the user keeps invoking the debounce fn under X ms. The last schedule won't get cleared,
- * so that `callback` would finally be called.
- * @example
- * // How to use:
- * function saveInput(data = 'none') {
- *   console.log('Saving data', data);
- * }
- * const processChange = wrapInDebounce(saveInput, 4000);
- *
- * processChange(2);
- * processChange({ a: 1, b: 6 });
- * // output: Saving data { a: 1, b: 6 }
- */
-export function wrapInDebounce<T extends AnyFunction>(
-  callback: T,
-  milliseconds = 300,
-): (...args: Parameters<T>) => Promise<ReturnType<T>> {
-  let timerId: ReturnType<typeof setTimeout> | null;
-  const promisesArray: Array<PromiseActions> = [];
+export type DebouncedFunction<T extends AnyFunction> = (...args: Parameters<T>) => Promise<Awaited<ReturnType<T>>>;
 
-  return function returnedDebouncedFunc(...args: Parameters<T>): Promise<ReturnType<T>> {
-    if (timerId) clearTimeout(timerId);
+export function wrapInDebounce<T extends AnyFunction>(callback: T, milliseconds = 300): DebouncedFunction<T> {
+  type Result = Awaited<ReturnType<T>>;
 
-    const debouncedPromise = new Promise<ReturnType<T>>(function debouncePromiseExecutor(resolve, reject) {
-      promisesArray.push({ resolve, reject });
+  let timerId: ReturnType<typeof setTimeout> | undefined;
+  let pendingPromises: Array<PromiseActions<Result>> = [];
 
-      try {
-        timerId = setTimeout(() => {
-          timerId = null;
+  return function returnedDebouncedFunc(...args) {
+    // Step 1: Clear the timer if it exists
+    clearTimeout(timerId);
 
-          const result: ReturnType<T> = callback(...args);
+    return new Promise<Result>((resolve, reject) => {
+      // Step 2: Add the promise to the pending promises
+      pendingPromises.push({ resolve, reject });
 
-          promisesArray.forEach(({ resolve }) => resolve(result));
-        }, milliseconds);
-      } catch (error) {
-        promisesArray.forEach(({ reject }) => reject(error));
-      }
+      // Step 3: Set a new timer
+      timerId = setTimeout(() => {
+        /**
+         * The invocation which arrives here is the winner! It's the only one that will be executed.
+         * It not only needs to invoke the callback, but it also has the responsibility
+         * to settle all his brethren pending promises.
+         *
+         * If it fails, it needs to reject all his brethren pending promises.
+         * If it succeeds, it needs to resolve all his brethren pending promises.
+         *
+         * They would either all resolve or all reject at the same time.
+         */
+
+        // Step 4: Get pending promises, this includes all my brethren pending promises, plus my own.
+        const promisesToSettle = pendingPromises;
+
+        // Step 5: Clear the pending promises, so that next batch of invocations will have an empty pending promises array.
+        pendingPromises = [];
+
+        // Step 6: Invoke the callback once
+        try {
+          const result = callback(...args);
+          // Step 7: Resolve the pending promises
+          promisesToSettle.forEach((promise) => promise.resolve(result));
+        } catch (error) {
+          // Step 8: Reject the pending promises
+          promisesToSettle.forEach((promise) => promise.reject(error));
+        }
+      }, milliseconds);
     });
-
-    return debouncedPromise;
   };
 }
