@@ -1,5 +1,11 @@
 # @talkohavy/lodash
 
+## 1.6.0
+
+### Minor Changes
+
+- wrapInDebounce: export the DebouncedFunction type, unwrap async callback results, reject all pending promises when the callback throws, and settle each burst of calls separately.
+
 ## 1.5.0
 
 ### Minor Changes
